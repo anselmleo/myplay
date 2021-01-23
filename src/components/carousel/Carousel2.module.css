@@ -1,0 +1,25 @@
+.carouselItem {
+    /* padding: 20px !important; */
+    margin: 20px !important;
+    width: 400px;
+}
+
+.trythis {
+    background-color: red;
+    width: 700px;
+    margin: auto;
+}
+
+.movieContainer:hover .movieImage {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+/* .movie {
+    background-color: yellow;
+}
+
+.movie:hover {
+    background-color: grey;
+    cursor: pointer;
+} */

@@ -5,7 +5,7 @@ import movieList from "../../services/movieAPI/movieAPIService";
 
 function MovieCarousel() {
   const [actionMovies, setActionMovies] = useState([]);
-  const [movieImage, setMovieImage] = useState("");
+  // const [movieImage, setMovieImage] = useState("");
   const getActionMovieList = (e) => {
     movieList
       .getAllMovies()
@@ -37,8 +37,8 @@ function MovieCarousel() {
     <div>
       <Carousel indicators={false} controls>
         <Carousel.Item interval={1000}>
-          <div className={Style.cardcontainer}>
-            <Row>
+          {/* <div className={Style.cardcontainer}> */}
+            {/* <Row> */}
               {actionMovies.map((actionMovie) => (
                 <Col className="mt-1 p-0" sm={3}>
                   <Card className={Style.card}>
@@ -49,10 +49,10 @@ function MovieCarousel() {
                   </Card>
                 </Col>
               ))}
-            </Row>
-          </div>
+            {/* </Row> */}
+          {/* </div> */}
         </Carousel.Item>
-        <Carousel.Item>
+        {/* <Carousel.Item>
           <div className={Style.cardcontainer}>
             <Row>
               {actionMovies.map((actionMovie) => (
@@ -67,7 +67,7 @@ function MovieCarousel() {
               ))}
             </Row>
           </div>
-        </Carousel.Item>
+        </Carousel.Item> */}
       </Carousel>
     </div>
   );

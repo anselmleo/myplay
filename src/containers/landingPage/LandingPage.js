@@ -1,59 +1,42 @@
-import React from "react";
-import { Navbar, Button, Col, Row } from "react-bootstrap";
-import Carousel from "../../components/carousel/Carousel";
+import React, { useState } from "react";
+import { Navbar, Button } from "react-bootstrap";
+import SignInModal from "../../components/signInModal/SignInModal"
+import Carousel from "../../components/carousel/Carousel2";
 import Style from "./LandingPage.module.css";
 
-// const colors = [
-//   "white",
-//   "black",
-//   "blue",
-//   "green",
-//   "pink",
-//   "red",
-//   "purple",
-//   "yellow",
-//   "gray",
-//   "lilac",
-// ];
 
 function LandingPage() {
-  const [value, setValue] = React.useState(0);
+  const [showModal, setShowModal] = useState(false);
 
-  //   React.useEffect(() => {
-  //     const interval = setInterval(() => {
-  //       setValue((v) => (v === 9 ? 0 : v + 1));
-  //     }, 1000);
-  //   }, []);
+  const handleShowModal = () => setShowModal(!showModal);
+  console.log("showModal", showModal);
 
   return (
     <div className={Style.body}>
       <Navbar className={Style.nav}>
-        <Navbar className={Style.logo}>Playstix</Navbar>
-        <Button className={Style.signinButton}>Sign-in</Button>
+        <span className={Style.logo}>Playstix</span>
+        <Button className={Style.signinButton} onClick={handleShowModal}>SIGN IN</Button>
+      <SignInModal className={Style.SignInModal} show={showModal} handleShow={handleShowModal} />
       </Navbar>
       <div className={Style.contentContainer}>
-        <Row>
-          <Col sm={3}></Col>
-          <Col sm={6}>
-            <div>
-              <div className={Style.contentTitle}>
-                Unlimited movies,
-                <br />
-                games, and more.
-              </div>
-              <div className={Style.contentSubtitle}>
-                Watch anywhare, Play anytime
-              </div>
+        <div className={Style.contentTitle}>
+          Unlimited movies,
+          <br />
+          games, and more.
+        </div>
+        <div className={Style.contentSubtitle}>
+          Watch anywhere, Play anytime
+        </div>
 
-              <Button className={Style.submit}>
-                Signup for free <i className="ml-2 fas fa-greater-than"></i>
-              </Button>
-            </div>
-            <Carousel />
-          </Col>
-          <Col sm={3}></Col>
-        </Row>
+        <Button className={Style.submit}>
+          Signup for free <i className="ml-2 fas fa-greater-than"></i>
+        </Button>
       </div>
+
+      <div className={Style.contentCarousel}>
+        <Carousel />
+      </div>
+
     </div>
   );
 }

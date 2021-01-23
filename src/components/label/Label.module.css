@@ -1,0 +1,3 @@
+.inputBox::first-letter {
+    text-transform: capitalize;
+}

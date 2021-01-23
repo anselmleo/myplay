@@ -1,0 +1,13 @@
+{
+  "users": [
+    { "id": 1, "firstName": "Harry", "lastName": "Porter", "email": "harryporter@gmail.com", "password": "12345678" },
+    { "id": 2, "firstName": "Dante", "lastName": "Rodrigues", "email": "danterod@gmail.com", "password": "12345678" },
+    { "id": 3, "firstName": "Adrian", "lastName": "Chopong", "email": "adrian@gmail.com", "password": "12345678" }
+  ],
+
+  "accounts": [
+      { "id": 1, "userId": 1, "accountNumber": 2333555222 },
+      { "id": 2, "userId": 1, "accountNumber": 2333555333 }
+  ]
+
+}
